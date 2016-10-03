@@ -4,46 +4,40 @@
 using namespace std;
 
 /**
-  Creates a sorted array of size n
+  Fills an allocated int array with sorted values
 
+  @param data the array to fill
   @param n the size of the array
-  @return the array
  */
-int* sortedArray(int n)
+void sortedArray(int* data, int n)
 {
-  int* arr = new int[n];
   for (int i = 0; i < n; i++)
-    arr[i] = i+1;
-  return arr;
+    data[i] = i+1;
 }
 
 /**
-  Creates an array of n zeros
+  Fills an allocated int array with n zeros
+
+  @param data the array to fill
+  @param n the size of the array
+ */
+void constArray(int* data, int n)
+{
+  memset(data, 0, n*sizeof(int));
+}
+
+/**
+  Fills an allocated int array with a random permutation of the integers 1 to n
 
   @param n the size of the array
   @return the array
  */
-int* constArray(int n)
+void randomArray(int* data, int n)
 {
-  int* arr = new int[n];
-  memset(arr, 0, n*sizeof(int));
-  return arr;
-}
-
-/**
-  Creates a random permutation of the integers 1 to n
-
-  @param n the size of the array
-  @return the array
- */
-int* randomArray(int n)
-{
-  int* arr = sortedArray(n);
+  sortedArray(data, n);
   for (int i = n; i > 1; i--)
   {
     int swap = rand() % i;
-    Swap(arr[swap], arr[i-1]);
+    Swap(data[swap], data[i-1]);
   }
-
-  return arr;
 }

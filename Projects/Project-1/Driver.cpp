@@ -2,6 +2,8 @@
 #include <iomanip>
 #include <ctime>
 #include <cstdlib>
+#include <exception>
+#include <cstdio>
 using namespace std;
 
 #include "Sorting.hpp"
@@ -55,7 +57,6 @@ int main(int argc, char** argv)
     return -1;
   }
 
-  temp = constArray(n);
   if (argc > ALG_ARG)
   {
     switch (argv[ALG_ARG][0])
@@ -107,21 +108,24 @@ int main(int argc, char** argv)
       cout << "Input array type (arg " << INPUT_ARG << ") not recognized, using default of '" << DEF_STR_INPUT << "'\n";
     }
   }
-  
+
   //Run sorting algorithm 3 times
+  data = new int[n];
+  temp = new int[n];
+
   for (int i = 0; i < 3; i++)
   {
     // Initialize data
     switch (intype)
     {
     case SORTED:
-      data = sortedArray(n);
+      sortedArray(data, n);
       break;
     case CONSTANT:
-      data = constArray(n);
+      constArray(data, n);
       break;
     case RANDOM:
-      data = randomArray(n);
+      randomArray(data, n);
     }
 
     //Sort data
@@ -142,6 +146,7 @@ int main(int argc, char** argv)
       quicksort(data, n);
     }
     timing[i] = clock() - start;
+    cout << "Attempt " << i + 1 << ":  " << setw(8) << (int) (timing[i] * 1000.0 / CLOCKS_PER_SEC) << " ms\n";
     //printArray(arr, n);
 
     //Verify data is sorted
@@ -157,13 +162,11 @@ int main(int argc, char** argv)
 
   //Output timing results
   for (int i = 0; i < 3; i++)
-    cout <<"Attempt " << i+1 << ":  " << setw(8) << (int) (timing[i] * 1000.0 / CLOCKS_PER_SEC) << " ms\n";
-  cout <<  "Median time:     " << setw(8) << (int) (timing[medianof3(timing[0], timing[1], timing[2])-1] * 1000.0 / CLOCKS_PER_SEC) << " ms" << endl;
+    cout << "Attempt " << i + 1 << ":  " << setw(8) << (int) (timing[i] * 1000.0 / CLOCKS_PER_SEC) << " ms\n";
+  cout << "Median time:     " << setw(8) << (int) (timing[medianof3(timing[0], timing[1], timing[2]) - 1] * 1000.0 / CLOCKS_PER_SEC) << " ms" << endl;
 
   delete[] data;
   delete[] temp;
 
-  char c;
-  cin >> c;
   return 0;
 }

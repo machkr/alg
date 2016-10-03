@@ -4,10 +4,10 @@
 #include <iostream>
 using namespace std;
 
-//Functions for allocating various integer arrays of length n
-int* sortedArray(int n);
-int* constArray(int n);
-int* randomArray(int n);
+//Functions for generating various integer arrays of length n
+void sortedArray(int* data, int n);
+void constArray(int* data, int n);
+void randomArray(int* data, int n);
 
 /**
 Swaps two values

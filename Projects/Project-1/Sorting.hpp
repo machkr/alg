@@ -113,7 +113,7 @@ template <class T> T* quicksort(T* data, int n)
     pivot = 0;
   Swap(data[0], data[pivot]);
 
-  int left = 0;
+  int left = 1;
   int right = n-1;
   do
   {
