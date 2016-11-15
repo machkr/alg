@@ -1,0 +1,27 @@
+Input: 	n - number of integers in array
+	A - array of n integers
+	t - maximum size of a partition
+	s - inequality score [t - p]^2
+
+Partition A into partitions of size t or less
+
+5     2     3     4     10     5     3
+				  |
+M[n, t] = min [ max(M[
+
+
+5	2	3	4	10	5	3
+
+(10 - 5)^2	10 - 7^2
+
+25
+
+Placing the (k - 1)th divider produces the kth partition,
+resulting in a total cost equal to the cost of the last
+partition and the cost of the partition to the left of
+the divider.
+
+if A[i] == t
+
+
+Minimize the Maximum Total Cost
