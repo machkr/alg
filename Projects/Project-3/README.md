@@ -1,5 +1,4 @@
 ## PROJECT 3: Graph Modeling and Graph Algorithms
-### The Itsy-Bitsy Spider Maze Problem
 Matthew Kramer [U20891900]
 
 This code has been successfully compiled using GCC 4.4.7 on a Scientific Linux 6.3 client from CIRCE at USF.
