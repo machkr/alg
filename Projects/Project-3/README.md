@@ -1,5 +1,5 @@
 ## PROJECT 3: Graph Modeling and Graph Algorithms
-Matthew Kramer [U20891900]
+###Matthew Kramer [U20891900]
 
 This code has been successfully compiled using GCC 4.4.7 on a Scientific Linux 6.3 client from CIRCE at USF.
 
