@@ -1,5 +1,5 @@
-# dynpro
-Analysis of Algorithms Project 2
+# Project 2
+Analysis of Algorithms
 
 Compile the program by using the `make` command or executing `g++ dynpro.cpp -o dynpro`
 
